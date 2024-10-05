@@ -17,9 +17,6 @@ jobs:
             - name: checkout code
               uses: actions/checkout@v4
 
-            - name: Create output Directory
-              run: mkdir .bin/
-
             - name: Set up JDK 17
               uses: actions/setup-java@v2
               with:
@@ -29,15 +26,15 @@ jobs:
             - name: Build with Gradle
               run: ./gradlew build
 
-            - name: List build/libs directory
-              run: ls -la build/libs
+            - name: List lwjgl3/build/libs directory
+              run: ls -la lwjgl3/build/libs
 
             - name: Upload build as artifact
               uses: actions/upload-artifact@v4
               with:
                 include-hidden-files: true
                 name: build-artifacts
-                path: build/libs
+                path: lwjgl3/build/libs
 
             
 
