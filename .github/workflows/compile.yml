@@ -32,6 +32,7 @@ jobs:
             - name: Upload build as artifact
               uses: actions/upload-artifact@v4
               with:
+                include-hidden-files: true
                 name: build-artifacts
                 path: build/libs
 
